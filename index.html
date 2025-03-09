@@ -1,53 +1,108 @@
-<html lang="pt-BR">
-
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-        rel="stylesheet">
-    <title>derickflix</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encontre Aqui</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            color: #333;
+            text-decoration: none;
+        }
+        .section {
+            padding: 40px;
+            text-align: center;
+        }
+        .product {
+            display: inline-block;
+            margin: 15px;
+            width: 200px;
+            text-align: center;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .pix-button {
+            background-color: #00a859;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .donate-button {
+            background-color: #f44336;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
 </head>
-
 <body>
-    <header>derickFLIX</header>
 
-    <section class="chamada">
-        <div class="chamada-texto">
-            <h1>ATRAVÉS DO ARANHAVERSO</h1>
-            <p>#homem-aranha</p>
-        </div>
+    <header>
+        <h1>Encontre Aqui</h1>
+    </header>
 
-        <div>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/gt_fAE1Eg2Q?si=EEv-tsY_b1B2OwKE"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-    </section>
+    <nav>
+        <a href="#">Início</a>
+        <a href="#">Remédios</a>
+        <a href="#">Livros</a>
+        <a href="#">Sobre</a>
+        <a href="#">Contato</a>
+    </nav>
 
-    <section class="categoria">
-        <h2>Filmes e séries</h2>
-        <div class="categoria-videos">
-            <a href="https://www.youtube.com/watch?v=cs15QqG6Gjc">
-                <img src="https://img.youtube.com/vi/cs15QqG6Gjc/maxresdefault.jpg" />
-            </a>
-            <a href="https://www.youtube.com/watch?v=nCmIwcycUJ8">
-                <img src="https://img.youtube.com/vi/nCmIwcycUJ8/maxresdefault.jpg" />
-            </a>
-            <a href="https://www.youtube.com/watch?v=FvRmEapoHRc">
-                <img src="https://img.youtube.com/vi/FvRmEapoHRc/maxresdefault.jpg" />
-            </a>
-            <a href="https://www.youtube.com/watch?v=Ipkw_hWW-Hw">
-                <img src="https://img.youtube.com/vi/Ipkw_hWW-Hw/maxresdefault.jpg" />
-            </a>
-            <a href="https://www.youtube.com/watch?v=d4DzMNGoyis">
-                <img src="https://img.youtube.com/vi/d4DzMNGoyis/maxresdefault.jpg" />
-            </a>
+    <div class="section">
+        <h2>Doe R$ 1 para apoiar o site</h2>
+        <!-- Link de doação com código PIX -->
+        <button class="donate-button" onclick="window.open('https://picpay.me/seu_usuario?value=1')">Doar R$ 1 com PicPay</button>
+    </div>
+
+    <div class="section">
+        <h2>Remédios em Destaque</h2>
+        <div class="product">
+            <p>Remédio 1</p>
+            <p>R$ 29,90</p>
+            <button>Saiba mais</button>
+            <!-- Link de pagamento via PIX fornecido -->
+            <button class="pix-button" onclick="window.open('00020126580014br.gov.bcb.pix013604630e6f-912b-4b3b-bd73-b970a2502db05204000053039865802BR5925DERICKY DE LUCCA SOUSA DA6009Sao Paulo62290525REC67CDFF4CC4FE11226547536304B356')">Pagar com PIX</button>
         </div>
-    </section>
+        <div class="product">
+            <p>Remédio 2</p>
+            <p>R$ 49,90</p>
+            <button>Saiba mais</button>
+            <!-- Link de pagamento via PIX fornecido -->
+            <button class="pix-button" onclick="window.open('00020126580014br.gov.bcb.pix013604630e6f-912b-4b3b-bd73-b970a2502db05204000053039865802BR5925DERICKY DE LUCCA SOUSA DA6009Sao Paulo62290525REC67CDFF4CC4FE11226547536304B356')">Pagar com PIX</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>Contato: <a href="tel:11985603491">(11) 98560-3491</a></p>
+        <p>&copy; 2025 Encontre Aqui. Todos os direitos reservados.</p>
+    </footer>
 
 </body>
-
 </html>
