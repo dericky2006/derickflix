@@ -1,108 +1,110 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Encontre Aqui</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 15px;
-            text-align: center;
-        }
-        nav {
-            text-align: center;
-            margin: 20px 0;
-        }
-        nav a {
-            margin: 0 15px;
-            color: #333;
-            text-decoration: none;
-        }
-        .section {
-            padding: 40px;
-            text-align: center;
-        }
-        .product {
-            display: inline-block;
-            margin: 15px;
-            width: 200px;
-            text-align: center;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            text-align: center;
-        }
-        .pix-button {
-            background-color: #00a859;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            font-size: 16px;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-        .donate-button {
-            background-color: #f44336;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            font-size: 16px;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-    </style>
+    <title>Encontre Aqui - Camisetas</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header>
         <h1>Encontre Aqui</h1>
+        <nav>
+            <button onclick="filtrarCamisetas('todas')">Todas</button>
+            <button onclick="filtrarCamisetas('clubes')">Clubes</button>
+            <button onclick="filtrarCamisetas('selecoes')">Seleções</button>
+        </nav>
     </header>
 
-    <nav>
-        <a href="#">Início</a>
-        <a href="#">Remédios</a>
-        <a href="#">Livros</a>
-        <a href="#">Sobre</a>
-        <a href="#">Contato</a>
-    </nav>
+    <main id="camisetas-container">
+        <!-- Camisetas serão inseridas aqui pelo JavaScript -->
+    </main>
 
-    <div class="section">
-        <h2>Doe R$ 1 para apoiar o site</h2>
-        <!-- Link de doação com código PIX -->
-        <button class="donate-button" onclick="window.open('https://picpay.me/seu_usuario?value=1')">Doar R$ 1 com PicPay</button>
-    </div>
-
-    <div class="section">
-        <h2>Remédios em Destaque</h2>
-        <div class="product">
-            <p>Remédio 1</p>
-            <p>R$ 29,90</p>
-            <button>Saiba mais</button>
-            <!-- Link de pagamento via PIX fornecido -->
-            <button class="pix-button" onclick="window.open('00020126580014br.gov.bcb.pix013604630e6f-912b-4b3b-bd73-b970a2502db05204000053039865802BR5925DERICKY DE LUCCA SOUSA DA6009Sao Paulo62290525REC67CDFF4CC4FE11226547536304B356')">Pagar com PIX</button>
-        </div>
-        <div class="product">
-            <p>Remédio 2</p>
-            <p>R$ 49,90</p>
-            <button>Saiba mais</button>
-            <!-- Link de pagamento via PIX fornecido -->
-            <button class="pix-button" onclick="window.open('00020126580014br.gov.bcb.pix013604630e6f-912b-4b3b-bd73-b970a2502db05204000053039865802BR5925DERICKY DE LUCCA SOUSA DA6009Sao Paulo62290525REC67CDFF4CC4FE11226547536304B356')">Pagar com PIX</button>
-        </div>
-    </div>
-
-    <footer>
-        <p>Contato: <a href="tel:11985603491">(11) 98560-3491</a></p>
-        <p>&copy; 2025 Encontre Aqui. Todos os direitos reservados.</p>
-    </footer>
-
+    <script src="script.js"></script>
 </body>
-</html>
+</html>body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+}
+
+nav button {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #ffcc00;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.camiseta {
+    background: white;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 200px;
+}
+
+.camiseta img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+button.comprar {
+    background: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}const camisetas = [
+    { id: 1, nome: "Barcelona", categoria: "clubes", imagem: "barcelona.jpg" },
+    { id: 2, nome: "Real Madrid", categoria: "clubes", imagem: "real-madrid.jpg" },
+    { id: 3, nome: "Brasil", categoria: "selecoes", imagem: "brasil.jpg" },
+    { id: 4, nome: "Argentina", categoria: "selecoes", imagem: "argentina.jpg" }
+];
+
+function exibirCamisetas(lista) {
+    const container = document.getElementById("camisetas-container");
+    container.innerHTML = ""; // Limpa o conteúdo anterior
+    lista.forEach(camisa => {
+        container.innerHTML += `
+            <div class="camiseta">
+                <img src="imagens/${camisa.imagem}" alt="${camisa.nome}">
+                <h3>${camisa.nome}</h3>
+                <p>R$25,00</p>
+                <button class="comprar" onclick="comprar('${camisa.nome}')">Comprar via Pix</button>
+            </div>
+        `;
+    });
+}
+
+function filtrarCamisetas(categoria) {
+    if (categoria === "todas") {
+        exibirCamisetas(camisetas);
+    } else {
+        const filtradas = camisetas.filter(c => c.categoria === categoria);
+        exibirCamisetas(filtradas);
+    }
+}
+
+function comprar(nome) {
+    alert(`Para comprar a camisa do ${nome}, faça o pagamento via Pix para 11985603491.`);
+}
+
+// Inicializa o site com todas as camisetas
+exibirCamisetas(camisetas);
